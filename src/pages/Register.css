@@ -1,0 +1,84 @@
+.form-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.form-group input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+.form-button {
+  padding: 0.75rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #218838;
+}
+
+.form-footer-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.form-footer-text a {
+  color: #28a745;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-footer-text a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: crimson;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}

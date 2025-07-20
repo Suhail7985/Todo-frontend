@@ -1,0 +1,24 @@
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(to right, #007bff, #28a745);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.footer p {
+  margin: 0;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: #222;
+    color: #aaa;
+    border-top: 1px solid #444;
+  }
+}
