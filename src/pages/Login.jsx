@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
+// import  API_URL  from "./env";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
@@ -15,7 +18,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/users/login", user);
+      const res = await axios.post(`${API_URL}/api/users/login`, user);
       const { token, userId } = res.data;
       localStorage.setItem("token", token);
       localStorage.setItem("userId", userId);

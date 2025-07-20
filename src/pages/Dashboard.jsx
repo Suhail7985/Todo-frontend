@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+// import  API_URL  from "./env";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Dashboard() {
   const [todos, setTodos] = useState([]);
@@ -22,7 +23,7 @@ export default function Dashboard() {
   // ✅ Fetch todos
   const fetchTodos = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/todos/${userId}`, {
+      const res = await axios.get(`${API_URL}/api/todos/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTodos(res.data);
@@ -43,7 +44,7 @@ export default function Dashboard() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/todos",
+        `${API_URL}/api/todos`,
         { task, userId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -58,7 +59,7 @@ export default function Dashboard() {
   const toggleStatus = async (id, currentStatus) => {
   try {
     await axios.patch(
-      `http://localhost:5000/api/todos/${id}`,
+      `${API_URL}/api/todos/${id}`,
       { status: !currentStatus },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -70,7 +71,7 @@ export default function Dashboard() {
   // ✅ Delete todo
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/todos/${id}`, {
+      await axios.delete(`${API_URL}/api/todos/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchTodos();

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "./Register.css";
+// import  API_URL  from "./env";
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 export default function Register() {
   const [user, setUser] = useState({
@@ -18,7 +22,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/users/register", user);
+      const res = await axios.post(`${API_URL}/api/users/register`, user);
       console.log(res.data);
       navigate("/"); // Redirect to login
     } catch (err) {
